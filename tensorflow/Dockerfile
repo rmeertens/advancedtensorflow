@@ -1,5 +1,5 @@
-#FROM tensorflow/tensorflow:1.3.0-py3
-FROM tensorflow/tensorflow:1.3.0-gpu-py3
+FROM tensorflow/tensorflow:1.3.0-py3
+#FROM tensorflow/tensorflow:1.3.0-gpu-py3
 
 # Various Python and C/build deps
 RUN apt-get update && apt-get install -y \ 
@@ -67,7 +67,11 @@ RUN apt-get update && apt-get install -y imagemagick
 RUN pip install tqdm
 
 RUN apt-get install -y git
+
+RUN pip install scikit-image
 RUN pip install git+https://github.com/jakevdp/JSAnimation.git
 RUN pip install scikit-image
+#RUN pip install scikit-image
+RUN apt-get update && apt-get install -y python-pyglet
 CMD ["/run_jupyter.sh"]
 
