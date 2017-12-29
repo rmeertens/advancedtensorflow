@@ -47,8 +47,8 @@ RUN apt-get install -y git
 
 RUN pip install scikit-image
 RUN pip install git+https://github.com/jakevdp/JSAnimation.git
+RUN apt-get update && apt-get install -y python-pyglet
 RUN pip install scikit-image
 #RUN pip install scikit-image
-RUN apt-get update && apt-get install -y python-pyglet
 CMD ["/run_jupyter.sh"]
 
